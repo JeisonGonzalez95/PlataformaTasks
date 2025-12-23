@@ -1,0 +1,242 @@
+.footer {
+    text-align: right;
+    color: rgb(22, 13, 73);
+    text-shadow: 1px 1px 1px white;
+    position: fixed;
+    bottom: 0;
+    width: 97%;
+    opacity: 40%;
+}
+
+.background-radial-gradient {
+    height: 100vh;
+    background-color: hsl(218, 41%, 15%);
+    background-image:
+        radial-gradient(650px circle at 0% 0%,
+            hsl(218, 41%, 35%) 15%,
+            hsl(218, 41%, 30%) 35%,
+            hsl(218, 41%, 20%) 75%,
+            hsl(218, 41%, 19%) 80%,
+            transparent 100%),
+        radial-gradient(1250px circle at 100% 100%,
+            hsl(218, 41%, 45%) 15%,
+            hsl(218, 41%, 30%) 35%,
+            hsl(218, 41%, 20%) 75%,
+            hsl(218, 41%, 19%) 80%,
+            transparent 100%);
+    background-size: cover;
+    background-position: center;
+}
+
+
+@media (max-width: 768px) {
+    #radius-shape-1 {
+        height: 18vw;
+        width: 18vw;
+        top: calc(5% - 30px);
+        left: calc(5% - 50px);
+    }
+
+    #radius-shape-2 {
+        width: 25vw;
+        height: 25vw;
+        bottom: calc(5% - 30px);
+        right: calc(5% - 50px);
+    }
+}
+
+
+@media (max-width: 480px) {
+    #radius-shape-1 {
+        height: 15vw;
+        width: 15vw;
+        top: 5%;
+        left: 5%;
+    }
+
+    #radius-shape-2 {
+        width: 20vw;
+        height: 20vw;
+        bottom: 5%;
+        right: 5%;
+    }
+}
+
+
+.bg-glass {
+    background-color: hsla(0, 0%, 100%, 0.9) !important;
+    backdrop-filter: saturate(200%) blur(25px);
+}
+
+.welcome {
+    z-index: 10;
+}
+
+.titulo {
+    color: hsl(218, 81%, 95%);
+}
+
+.parrafo {
+    color: hsl(218, 81%, 85%);
+    opacity: 70%;
+}
+
+.txt-smll {
+    font-size: 10px;
+    margin-right: 10px;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+.img-logo {
+    width: 100px;
+}
+.img-logo-s {
+    width: 300px;
+}
+
+
+
+
+/* Estilos para el menú lateral */
+.sidebar {
+    width: 200px;
+    height: 100vh;
+    position: fixed;
+    top: 8%;
+    left: 0;
+    background: #142434;
+    padding-top: 20px;
+    transition: transform 0.3s ease-in-out;
+    transform: translateX(0);
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+.sidebar.hidden {
+    transform: translateX(-100%);
+}
+
+.sidebar .menu-item {
+    display: block;
+    padding: 15px;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 18px;
+    transition: background 0.3s;
+}
+
+.sidebar .menu-item:hover {
+    background: #2c4464;
+}
+
+.submenu {
+    display: none;
+    padding-left: 20px;
+}
+
+.submenu .menu-item {
+    font-size: 16px;
+}
+
+.menu-toggle {
+    position: absolute;
+    top: 0;
+    left: 100%;
+    background: #6d0ca4;
+    border: none;
+    color: #ffffff;
+    padding: 10px;
+    cursor: pointer;
+    transition: background 0.3s;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.menu-toggle:hover {
+    background: #2c4464;
+    color: #fff;
+}
+
+.menu-item.dropdown::after {
+    content: " ▼";
+    font-size: 14px;
+}
+
+.content-wrapper {
+    padding: 20px;
+    margin-top: 10%; 
+    margin-left: 10%;
+    transition: margin-left 0.3s ease-in-out, width 0.3s ease-in-out;
+    width: calc(100% - 25px) !important;
+}
+
+.sidebar.hidden + .content-wrapper {
+    margin-left: 0;
+    width: 100%;
+}
+
+.resizable-content {
+    transition: width 0.3s ease-in-out;
+    width: 100% !important;
+}
+
+.navbar {
+    position: fixed !important;
+    top: 0;
+    width: 100%;
+    z-index: 1050;
+    background: #ffffff !important;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+
+
+[popover] {
+    position: fixed;
+    inset: 0;
+    width: 100vw;
+    height: 100vh;
+    display: none;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1055;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+}
+
+[popover]:popover-open {
+    display: flex;
+    animation: fadeIn 0.1s ease-in-out;
+}
+
+[popover] .modal-content {
+    background-color: #fff;
+    border-radius: 1rem;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+    max-width: 800px;
+    width: 100%;
+    animation: slideUp 0.3s ease-in-out;
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
