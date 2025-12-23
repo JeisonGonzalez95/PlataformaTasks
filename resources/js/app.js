@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     $('.table').DataTable({
         language: {
-            url: '//cdn.datatables.net/plug-ins/1.13.7/i18n/es-ES.json' // Traducción al español
+            url: '//cdn.datatables.net/plug-ins/1.13.7/i18n/es-ES.json'
         }
     });
 
@@ -15,10 +15,8 @@ document.addEventListener('DOMContentLoaded', function () {
     const sidebar = document.getElementById('sidebar');
     const contentWrapper = document.querySelector('.content-wrapper');
     const resizableContent = document.querySelector('.resizable-content');
-    const listasSubmenu = document.getElementById('listasSubmenu');
 
     if (menuToggle) {
-
 
         menuToggle.addEventListener('click', function () {
             const isHidden = sidebar.classList.toggle('hidden');
